@@ -2,8 +2,8 @@
 public abstract class Account implements inAccount {
 	
 	private static int sequential = 1;
-
 	private static final int agencyPattern = 0001;
+	
 	private int agency; //agencia 
 	private int number; //numero
 	private double balance; //saldo
@@ -13,19 +13,24 @@ public abstract class Account implements inAccount {
 		this.number = sequential++;
 	}	
 	
+	//Sacar
 	@Override
 	public void ToWithdraw(double value) {
-		// TODO Auto-generated method stub
-		
+		balance -= value;
 	}
+	
+	//Deposito
 	@Override
 	public void Deposit(double value) {
-		// TODO Auto-generated method stub
+		balance += value;
 		
 	}
+	
+	//Tranferencia
 	@Override
 	public void Transfer(double value, Account destinationAccount) {
-		// TODO Auto-generated method stub
+		this.ToWithdraw(value);
+		destinationAccount.Deposit(value);
 		
 	}
 	
