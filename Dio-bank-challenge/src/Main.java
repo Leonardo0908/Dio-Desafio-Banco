@@ -13,7 +13,7 @@ public class Main {
 		Account cc = new CheckingAccount(Leonardo);
 		cc.Deposit(100);
 		
-		cc.Transfer(150, pp);
+		cc.Transfer(10, pp);
 		
 		cc.printExtract();
 		pp.printExtract();
