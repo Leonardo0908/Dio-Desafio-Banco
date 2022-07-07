@@ -4,13 +4,15 @@ public abstract class Account implements inAccount {
 	private static int sequential = 1;
 	private static final int agencyPattern = 0001;
 	
-	private int agency; //agencia 
-	private int number; //numero
-	private double balance; //saldo
+	protected int agency; //agencia 
+	protected int number; //numero
+	protected double balance; //saldo
+	protected Client client;
 	
-	public Account() {
+	public Account(Client client) {
 		this.agency = Account.agencyPattern;
 		this.number = sequential++;
+		this.client = client;
 	}	
 	
 	//Sacar
@@ -42,6 +44,13 @@ public abstract class Account implements inAccount {
 	}
 	public double getBalance() {
 		return balance;
+	}
+	
+	protected void printCommonInformation(){
+		System.out.println(String.format(" Agency: %d ", this.agency)); 
+		System.out.println(String.format(" Holder: %s ", this.client.getName()));	//Titular
+		System.out.println(String.format(" Number: %d ", this.number));   //Numero conta
+		System.out.println(String.format(" Balance: %.2f ", this.balance));  //Saldo
 	}
 	
 }

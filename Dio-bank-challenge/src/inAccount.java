@@ -1,7 +1,8 @@
 // interface Conta 
 public interface inAccount {
 	
-	public void ToWithdraw(double value); //Sacar 
-	public void Deposit(double value);    //Depositar
-	public void Transfer(double value, Account destinationAccount);   //Trasferir
+	void ToWithdraw(double value); //Sacar 
+	void Deposit(double value);    //Depositar
+	void Transfer(double value, Account destinationAccount);   //Trasferir
+	void printExtract();
 }
